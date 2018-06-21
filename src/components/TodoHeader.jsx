@@ -1,12 +1,7 @@
 import React from 'react';
 
 class TodoHeader extends React.Component {
-  constructor() {
-    super();
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-  }
-
-  handleKeyUp(e) {
+  handleKeyUp = (e) => {
     if(e.keyCode === 13) {
       this.props.addTodo(e.target.value);
       e.target.value = '';

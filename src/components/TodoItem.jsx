@@ -1,17 +1,11 @@
 import React from 'react';
 
 class TodoItem extends React.Component {
-  constructor() {
-    super();
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick  =this.handleClick.bind(this);
-  }
-
-  handleChange(e) {
+  handleChange = (e) => {
     this.props.changeTodoState(this.props.index, e.target.checked);
   }
 
-  handleClick() {
+  handleClick = () => {
     this.props.deleteTodo(this.props.index);
   }
 

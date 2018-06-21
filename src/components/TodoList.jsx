@@ -11,12 +11,6 @@ class TodoList extends React.Component {
     this.state = {
       todos: this.db.get('todos') || [],
     };
-
-    this.addTodo = this.addTodo.bind(this);
-    this.changeTodoState = this.changeTodoState.bind(this);
-    this.deleteTodo = this.deleteTodo.bind(this);
-    this.allSelect = this.allSelect.bind(this);
-    this.clearDone =this.clearDone.bind(this);
   }
 
   updateState(newTodos) {
@@ -26,7 +20,7 @@ class TodoList extends React.Component {
     this.db.set('todos', newTodos);
   }
 
-  addTodo(todoText) {
+  addTodo = (todoText) => {
     let newTodos = this.state.todos;
     newTodos.push({
       text: todoText,
@@ -35,19 +29,19 @@ class TodoList extends React.Component {
     this.updateState(newTodos);
   }
 
-  changeTodoState(index, checked) {
+  changeTodoState = (index, checked) => {
     let newTodos = this.state.todos;
     newTodos[index].isDone = checked;
     this.updateState(newTodos);
   }
 
-  deleteTodo(index) {
+  deleteTodo = (index) => {
     let newTodos = this.state.todos;
     newTodos.splice(index, 1);
     this.updateState(newTodos);
   }
 
-  allSelect(checked) {
+  allSelect = (checked) => {
     let newTodos = this.state.todos.map((todo) => {
       todo.isDone = checked;
       return todo;
@@ -55,7 +49,7 @@ class TodoList extends React.Component {
     this.updateState(newTodos);
   }
 
-  clearDone() {
+  clearDone = () => {
     let newTodos = this.state.todos.filter((todo) => !todo.isDone)
     this.updateState(newTodos);
   }
