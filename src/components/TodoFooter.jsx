@@ -16,7 +16,7 @@ class TodoFooter extends React.Component {
     return (
       <div className="todo-footer">
         <label>
-          <input type="checkbox" checked={this.props.isAllCheck} onChange={this.handleChange} />
+          <input type="checkbox" onChange={this.handleChange} />
           <span>全选</span>
         </label>
         <span className="footer-info">
