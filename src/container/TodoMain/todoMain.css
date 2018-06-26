@@ -1,0 +1,8 @@
+.li {
+  float: left;
+  width: 480px;
+  margin-left: 4px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  list-style-type: none;
+}
